@@ -186,8 +186,8 @@ const QuickMessage = ({ studentData }, Props) => {
                 }}
               >
                 
-                <div class="svg-wrapper-1-sendButton">
-                  <div class="svg-wrapper-sendButton">
+                <div className="svg-wrapper-1-sendButton">
+                  <div className="svg-wrapper-sendButton">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"

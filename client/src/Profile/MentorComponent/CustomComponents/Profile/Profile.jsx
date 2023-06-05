@@ -115,7 +115,7 @@ function Profile(props) {
                     type="button"
                     onClick={setEdit}
                   >
-                    <span class="edit-icon"></span>
+                    <span className="edit-icon"></span>
                   </button> */}
                 </div>
               </div>
@@ -202,56 +202,56 @@ function Profile(props) {
           </div>
 
           <div className="section section4   ">
-            <div class="counterCard">
-              <div class="header">
-                <div class="img-box">
+            <div className="counterCard">
+              <div className="header">
+                <div className="img-box">
                   <span>{tNotes ? tNotes : 0}</span>
                 </div>
-                <h1 class="title">Approved Notes</h1>
+                <h1 className="title">Approved Notes</h1>
               </div>
-              <div class="content">
-                <Link class="btn-link" to="/notes">
+              <div className="content">
+                <Link className="btn-link" to="/notes">
                   Read More...
                 </Link>
               </div>
             </div>
 
-            <div class="counterCard">
-              <div class="header">
-                <div class="img-box">
+            <div className="counterCard">
+              <div className="header">
+                <div className="img-box">
                   <span>{pendingNotes ? pendingNotes : 0}</span>
                 </div>
-                <h1 class="title">Pending Notes</h1>
+                <h1 className="title">Pending Notes</h1>
               </div>
-              <div class="content">
-                <Link class="btn-link" to="/notes">
+              <div className="content">
+                <Link className="btn-link" to="/notes">
                   Read More...
                 </Link>
               </div>
             </div>
 
-            <div class="counterCard">
-              <div class="header">
-                <div class="img-box">
+            <div className="counterCard">
+              <div className="header">
+                <div className="img-box">
                   <span>{assignmentApproved ? assignmentApproved : 0}</span>
                 </div>
-                <h1 class="title assignments">Approved Assignments</h1>
+                <h1 className="title assignments">Approved Assignments</h1>
               </div>
-              <div class="content">
-                <Link class="btn-link" to="/assignments">
+              <div className="content">
+                <Link className="btn-link" to="/assignments">
                   Read More...
                 </Link>
               </div>
             </div>
-            <div class="counterCard">
-              <div class="header">
-                <div class="img-box">
+            <div className="counterCard">
+              <div className="header">
+                <div className="img-box">
                   <span>{assignmentsPending ? assignmentsPending : 0}</span>
                 </div>
-                <h1 class="title assignments">Pending Assignments</h1>
+                <h1 className="title assignments">Pending Assignments</h1>
               </div>
-              <div class="content">
-                <Link class="btn-link" to="/assignments">
+              <div className="content">
+                <Link className="btn-link" to="/assignments">
                   Read More...
                 </Link>
               </div>

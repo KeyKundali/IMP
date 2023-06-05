@@ -88,7 +88,7 @@ function Message(Props) {
                       <button
                         type="submit"
                         className="send-btn"
-                        class="send-btn"
+                        className="send-btn"
                         // data-bs-toggle="modal"
                         // data-bs-target="#staticBackdrop"
                         onClick={() => {
@@ -114,7 +114,7 @@ function Message(Props) {
                   </div>
                 </div>
                 <div
-                  class="modal fade"
+                  className="modal fade"
                   id="staticBackdrop"
                   data-bs-backdrop="static"
                   data-bs-keyboard="false"
@@ -122,9 +122,9 @@ function Message(Props) {
                   aria-labelledby="staticBackdropLabel"
                   aria-hidden="true"
                 >
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-body">
+                  <div className="modal-dialog">
+                    <div className="modal-content">
+                      <div className="modal-body">
                         <h5>
                           {" "}
                           Yehh! Your message has been send to the Mentees
@@ -132,11 +132,11 @@ function Message(Props) {
                         <br />
                         <h6>(Warning : Message cannot be Undone !)</h6>
                       </div>
-                      <div class="modal-footer">
+                      <div className="modal-footer">
                         <Link to="/message">
                           <button
                             type="button"
-                            class="send-btn"
+                            className="send-btn"
                             data-bs-dismiss="modal"
                           >
                             Done

@@ -237,7 +237,7 @@ function FieldsSignUp(props) {
                       />
 
       <div
-        class="modal fade"
+        className="modal fade"
         id="staticBackdropErrorBox1"
         data-bs-backdrop="static"
         data-bs-keyboard="false"
@@ -245,9 +245,9 @@ function FieldsSignUp(props) {
         aria-labelledby="staticBackdropLabel"
         aria-hidden="true"
       >
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-body">
+        <div className="modal-dialog">
+          <div className="modal-content">
+            <div className="modal-body">
               <h3>{Error ? <>Error: {Error}</> : <>{data}</>}</h3>
               <br />
               <h6>
@@ -261,10 +261,10 @@ function FieldsSignUp(props) {
                 )}
               </h6>
             </div>
-            <div class="modal-footer">
+            <div className="modal-footer">
               <button
                 type="button"
-                class="btn btn-blue-500"
+                className="btn btn-blue-500"
                 data-bs-dismiss="modal"
               >
                 Done

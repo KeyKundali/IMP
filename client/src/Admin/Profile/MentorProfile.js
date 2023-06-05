@@ -107,29 +107,29 @@ const MentorProfile = (props) => {
 		<div>
 			<Fragment>
 				<div className="detailsContainer">
-					<div class="cardStudentMentor" data-state="#about">
-						<div class="cardStudentMentor-header">
+					<div className="cardStudentMentor" data-state="#about">
+						<div className="cardStudentMentor-header">
 							<div
-								class="cardStudentMentor-cover"
+								className="cardStudentMentor-cover"
 								style={{ backgroundImage: `url(${customMentorPic})` }}
 							/>
-							<img class="cardStudentMentor-avatar" src={customMentorPic} alt="avatar" />
-							<h1 class="cardStudentMentor-fullname">{props.mentor.Mentor_Name}</h1>
-							<h2 class="cardStudentMentor-jobtitle">{props.mentor.Mentor_Position}</h2>
-							<h2 class="cardStudentMentor-organization">{props.mentor.Mentor_Organization}</h2>
+							<img className="cardStudentMentor-avatar" src={customMentorPic} alt="avatar" />
+							<h1 className="cardStudentMentor-fullname">{props.mentor.Mentor_Name}</h1>
+							<h2 className="cardStudentMentor-jobtitle">{props.mentor.Mentor_Position}</h2>
+							<h2 className="cardStudentMentor-organization">{props.mentor.Mentor_Organization}</h2>
 						</div>
-						{/* <div class="cardStudentMentor-main"> */}
-						<div class="cardStudentMentor-section" id="about">
-							<div class="cardStudentMentor-content">
-								<div class="cardStudentMentor-subtitle">ABOUT</div>
-								<p class="cardStudentMentor-desc">{props.mentor.Mentor_About}</p>
+						{/* <div className="cardStudentMentor-main"> */}
+						<div className="cardStudentMentor-section" id="about">
+							<div className="cardStudentMentor-content">
+								<div className="cardStudentMentor-subtitle">ABOUT</div>
+								<p className="cardStudentMentor-desc">{props.mentor.Mentor_About}</p>
 								<div className="studentMentorFooter">
 									<div className="GroupName">
 										Group Name: <span>&nbsp; {props.mentor.Mentor_Group_Name}</span>
 									</div>
 
 									<div className="mentorSocial">
-										<div class="card-social">
+										<div className="card-social">
 											<a href={`tel: ${props.mentor.Mentor_Contact_Number}`} target="_blank">
 												<svg
 													version="1.0"

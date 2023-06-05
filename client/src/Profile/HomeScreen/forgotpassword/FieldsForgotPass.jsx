@@ -164,16 +164,16 @@ alert (" 😉 You will get an email from the team soon ! Thank you. 😉");
       </Form>
     )}
   </Formik>
-<div class="modal fade"  id="staticBackdropErrorBox" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
+<div className="modal fade"  id="staticBackdropErrorBox" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div className="modal-dialog">
+    <div className="modal-content">
 
-      <div class="modal-body">
+      <div className="modal-body">
           <h3>{Error? (<>Error: {Error}</>):(<>{data}</>)}</h3><br/>
           <h6>{Error? (<h6>(Warning : Multiple Invalid logins can block your IP address !)</h6>):(<></>)}</h6>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-blue-500" data-bs-dismiss="modal">Done</button>
+      <div className="modal-footer">
+        <button type="button" className="btn btn-blue-500" data-bs-dismiss="modal">Done</button>
       </div>
     </div>
   </div>

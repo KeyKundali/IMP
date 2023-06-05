@@ -400,7 +400,7 @@ function Assignments(Props) {
 														handleUploadStudent();
 													}}
 												>
-													<i class="fa-solid fa-right-to-bracket" />Assign New Submission
+													<i className="fa-solid fa-right-to-bracket" />Assign New Submission
 												</button>
 											</form>
 										</div>

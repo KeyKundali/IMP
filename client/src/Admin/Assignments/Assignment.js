@@ -67,15 +67,15 @@ const Assignment = () => {
 		>
 			{mentorsList.data.map((element) => {
 				return (
-					<div key={element._id} class="counterCard">
-						<div class="header">
-							<div class="img-box img-box2">
+					<div key={element._id} className="counterCard">
+						<div className="header">
+							<div className="img-box img-box2">
 								<span />
 							</div>
-							<h1 class="title">{element.Mentor_Group_Name}</h1>
+							<h1 className="title">{element.Mentor_Group_Name}</h1>
 							<h2 style={{ color: 'white' }}>{element.Mentor_Name}</h2>
 						</div>
-						<div class="content">
+						<div className="content">
 							<button
 								onClick={async () => {
 									await fetchAssignmentDetails(element);

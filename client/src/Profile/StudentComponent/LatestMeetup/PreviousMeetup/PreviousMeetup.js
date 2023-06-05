@@ -12,18 +12,18 @@ function PreviousMeetup(Props) {
             <div className="xx">
               <h2 className="pageHeading text-center ">Past Meetings</h2>
             </div>
-            <div class="customTable-container">
-              <div class="customTable-content">
-                <div class="customTables-section ">
+            <div className="customTable-container">
+              <div className="customTable-content">
+                <div className="customTables-section ">
                   {previousMeetings?.map((ArrayObj, index) => {
                     // console.log("jjjjjj",ArrayObj);
                     return (
                       <>
-                        <div class="customTables" key={index}>
-                          <div class="customTable-box">
-                            <div class="customTable-content">
-                              <div class="customTable-header">
-                                <div class="name">
+                        <div className="customTables" key={index}>
+                          <div className="customTable-box">
+                            <div className="customTable-content">
+                              <div className="customTable-header">
+                                <div className="name">
                                   Title:{" "}
                                   {ArrayObj.TopicName ? (
                                     ArrayObj.TopicName
@@ -34,14 +34,14 @@ function PreviousMeetup(Props) {
 
                                 <p>{ArrayObj.GroupName}&nbsp;~&nbsp;{ArrayObj.MentorName}</p>
                               </div>
-                              <p class="customTable-line">
+                              <p className="customTable-line">
                                 <b>Description:</b> {ArrayObj.Description}
                               </p>
-                              <p class="customTable-line">
+                              <p className="customTable-line">
                                 <b>Venue:</b> {ArrayObj.Venue}
                               </p>
 
-                              <p class="customTable-line time">
+                              <p className="customTable-line time">
                                 <b>Date & Time:</b> {DateConverter(ArrayObj.Date, "Date" )} |  {ArrayObj.Time}
                               </p>
                             </div>

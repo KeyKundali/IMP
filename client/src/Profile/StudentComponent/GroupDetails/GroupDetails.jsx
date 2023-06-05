@@ -181,32 +181,32 @@ export default function BasicTable({ studentData }, Props) {
       ) : (
         <>
           <div className="detailsContainer">
-            <div class="cardStudentMentor" data-state="#about">
-              <div class="cardStudentMentor-header">
+            <div className="cardStudentMentor" data-state="#about">
+              <div className="cardStudentMentor-header">
                 <div
-                  class="cardStudentMentor-cover"
+                  className="cardStudentMentor-cover"
                   style={{ backgroundImage: `url(${customMentorPic})` }}
                 ></div>
                 <img
-                  class="cardStudentMentor-avatar"
+                  className="cardStudentMentor-avatar"
                   src={customMentorPic}
                   alt="avatar"
                 />
-                <h1 class="cardStudentMentor-fullname">
+                <h1 className="cardStudentMentor-fullname">
                   {GroupDataMentor[0]?.Mentor_Name}
                 </h1>
-                <h2 class="cardStudentMentor-jobtitle">
+                <h2 className="cardStudentMentor-jobtitle">
                   {GroupDataMentor[0]?.Mentor_Position}
                 </h2>
-                <h2 class="cardStudentMentor-organization">
+                <h2 className="cardStudentMentor-organization">
                   {GroupDataMentor[0]?.Mentor_Organization}
                 </h2>
               </div>
-              {/* <div class="cardStudentMentor-main"> */}
-              <div class="cardStudentMentor-section" id="about">
-                <div class="cardStudentMentor-content">
-                  <div class="cardStudentMentor-subtitle">ABOUT</div>
-                  <p class="cardStudentMentor-desc">
+              {/* <div className="cardStudentMentor-main"> */}
+              <div className="cardStudentMentor-section" id="about">
+                <div className="cardStudentMentor-content">
+                  <div className="cardStudentMentor-subtitle">ABOUT</div>
+                  <p className="cardStudentMentor-desc">
                     {GroupDataMentor[0]?.Mentor_About}
                   </p>
                   <div className="studentMentorFooter">
@@ -223,7 +223,7 @@ export default function BasicTable({ studentData }, Props) {
                       </span>
                     </div>
                     <div className="mentorSocial">
-                      <div class="card-social">
+                      <div className="card-social">
                         <a
                           href={`tel: ${GroupDataMentor[0]?.Mentor_Contact_Number}`}
                           target="_blank"

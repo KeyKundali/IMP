@@ -155,7 +155,7 @@ function AssignmentForm(Props) {
                     handleUpload();
                   }}
                 >
-                  <i class="fa-solid fa-right-to-bracket"></i>Submit
+                  <i className="fa-solid fa-right-to-bracket"></i>Submit
                 </button>
               </form>
               <Snackbar

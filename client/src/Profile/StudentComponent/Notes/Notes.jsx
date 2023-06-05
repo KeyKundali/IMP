@@ -318,7 +318,7 @@ export default function Notes(Props) {
                               handleUploadSNotes();
                             }}
                           >
-                            <i class="fa-solid fa-right-to-bracket"></i>Upload
+                            <i className="fa-solid fa-right-to-bracket"></i>Upload
                             New Notes
                           </button>
                         </form>

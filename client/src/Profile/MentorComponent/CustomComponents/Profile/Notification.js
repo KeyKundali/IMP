@@ -85,11 +85,11 @@ function Notification(Props) {
       return (
         <>
           {" "}
-          <p class="p">{`From ${Item.Student_Name} -> Feedback :${Item.Description}`}</p>
+          <p className="p">{`From ${Item.Student_Name} -> Feedback :${Item.Description}`}</p>
         </>
       );
     } else {
-      return <p class="p">{Item.Description}</p>;
+      return <p className="p">{Item.Description}</p>;
     }
   };
   useEffect(() => {
@@ -101,13 +101,13 @@ function Notification(Props) {
       <div className="notificationWrapper">
         {Messagedata.map((Item) => {
           return (
-            <div class="notificationContainer">
-              <div class="img"></div>
-              <div class="notificationTextBox">
-                <div class="notificationTextContent">
-                  <p class="h1">{`${Item.Type==="Feedback" ? Item.Type : ""} ${Item.Topic} `}</p>
+            <div className="notificationContainer">
+              <div className="img"></div>
+              <div className="notificationTextBox">
+                <div className="notificationTextContent">
+                  <p className="h1">{`${Item.Type==="Feedback" ? Item.Type : ""} ${Item.Topic} `}</p>
                 </div>
-                <span class="span">{DateConverter(Item.Date, "Date" )}</span>
+                <span className="span">{DateConverter(Item.Date, "Date" )}</span>
                 {CustomFunction(Item)}
               </div>
             </div>

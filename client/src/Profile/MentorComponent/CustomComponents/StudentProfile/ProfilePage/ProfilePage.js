@@ -32,42 +32,42 @@ function ProfilePage({ viewStudentProfile }) {
     <>
       <div className="section">
         <div className="container section4">
-          <div class="counterCard">
-            <div class="header">
-              <div class="img-box img-box2">
+          <div className="counterCard">
+            <div className="header">
+              <div className="img-box img-box2">
                 <span></span>
               </div>
-              <h1 class="title">Personal Details</h1>
+              <h1 className="title">Personal Details</h1>
             </div>
-            <div class="content">
+            <div className="content">
               <button className="btn-link" onClick={personalDetailsHandler}>
                 Read More...
               </button>
             </div>
           </div>
 
-          <div class="counterCard">
-            <div class="header">
-              <div class="img-box img-box2">
+          <div className="counterCard">
+            <div className="header">
+              <div className="img-box img-box2">
                 <span></span>
               </div>
-              <h1 class="title">Family Details</h1>
+              <h1 className="title">Family Details</h1>
             </div>
-            <div class="content">
+            <div className="content">
               <button className="btn-link" onClick={familyDetailsHandler}>
                 Read More...
               </button>
             </div>
           </div>
 
-          <div class="counterCard">
-            <div class="header">
-              <div class="img-box img-box2">
+          <div className="counterCard">
+            <div className="header">
+              <div className="img-box img-box2">
                 <span></span>
               </div>
-              <h1 class="title">Academic Details</h1>
+              <h1 className="title">Academic Details</h1>
             </div>
-            <div class="content">
+            <div className="content">
               <button className="btn-link" onClick={acadmicDeatilsHandler}>
                 Read More...
               </button>

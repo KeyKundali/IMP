@@ -7,6 +7,15 @@ const MeetingsList = (props) => {
 		};
 		fetch();
 	}, []);
+	function formatDateAndTime(date) {
+		const day = String(date.getDate()).padStart(2, '0');
+		const month = String(date.getMonth() + 1).padStart(2, '0'); // Note: January is 0
+		const year = date.getFullYear();
+		const hours = String(date.getHours()).padStart(2, '0');
+		const minutes = String(date.getMinutes()).padStart(2, '0');
+
+		return `${day}/${month}/${year} ${hours}:${minutes}`;
+	}
 
 	return (
 		<div>
@@ -88,7 +97,13 @@ const MeetingsList = (props) => {
 										View M.O.M
 									</a>
 								</Card.Text>
-								<Card.Text>{element.Location + ' at ' + element.Time}</Card.Text>
+								<Card.Text>
+									{element.Location}
+									<br />
+									{!isNaN(Date.parse(element.Time)) ? (
+										formatDateAndTime(new Date(element.Time))
+									) : null}
+								</Card.Text>
 							</Card.Body>
 						</Card>
 					);

@@ -188,7 +188,7 @@ function PendingNotes(Props) {
             />
           </div>
           <div
-            class="modal fade"
+            className="modal fade"
             id="staticBackdropNoteApproved"
             data-bs-backdrop="static"
             data-bs-keyboard="false"
@@ -196,19 +196,19 @@ function PendingNotes(Props) {
             aria-labelledby="staticBackdropLabel"
             aria-hidden="true"
           >
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-body">
+            <div className="modal-dialog">
+              <div className="modal-content">
+                <div className="modal-body">
                   <h5>
                     {" "}
                     Note Approved Successfully and ready for mentees Dashboard !{" "}
                   </h5>
                 </div>
-                <div class="modal-footer">
+                <div className="modal-footer">
                   <Link to="/notes">
                     <button
                       type="button"
-                      class="btn btn-primary"
+                      className="btn btn-primary"
                       data-bs-dismiss="modal"
                       onClick={()=>{
                         window.location.reload();
