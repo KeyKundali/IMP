@@ -26,7 +26,7 @@ const AdminProfile = () => {
 							</div>
 						</div>
 					</div>
-					<div class="counter">
+					{/* <div class="counter">
 						<div class="row">
 							<div class="col-6 col-lg-3">
 								<div class="count-data text-center">
@@ -61,7 +61,7 @@ const AdminProfile = () => {
 								</div>
 							</div>
 						</div>
-					</div>
+					</div> */}
 				</div>
 			</section>
 		</Fragment>
