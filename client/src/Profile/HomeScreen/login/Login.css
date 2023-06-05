@@ -1,0 +1,18 @@
+.Login-Container{
+    margin-top: 4rem;
+    height: 90vh;
+}
+
+.forgetText{
+    margin-bottom: 1rem;
+}
+
+.MuiSnackbarContent-root{
+    color: white !important;
+    font-size: 1.6rem !important;
+    width: 310px !important;
+    height: 48px;
+}
+
+
+
