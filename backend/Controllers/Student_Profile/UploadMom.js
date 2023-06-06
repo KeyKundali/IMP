@@ -3,7 +3,12 @@ const MeetingModel = require('../../DatabaseSetup/Mongoose.Meetings.Schemas');
 const UploadMOm = async (req, res, next) => {
 	const { id, url } = req.body;
 	try {
-		await MeetingModel.Meeting_Model.findOneAndUpdate({ _id: id }, { $set: { MinutesOfMeeting: url } });
+		const drop = await MeetingModel.Meeting_Model.findOneAndUpdate(
+			{ _id: id },
+			{ $set: { MinutesOfMeeting: url } },
+			{ new: true }
+		);
+		console.log(drop);
 		res.status(200).json({
 			status: 'Success',
 			message: 'Updated Successfully'

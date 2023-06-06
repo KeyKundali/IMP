@@ -81,7 +81,9 @@ function Assignments(Props) {
 				filter: true,
 				resizable: true,
 				headerName: 'Minutes Of Meeting',
+
 				cellRenderer: function(params) {
+					console.log(params.value);
 					return params.value ? (
 						<a target="_blank" href={params.value}>
 							View
@@ -90,14 +92,23 @@ function Assignments(Props) {
 				}
 			},
 			{
+				field: '_id',
 				width: 220,
 				sortable: true,
 				filter: true,
 				resizable: true,
 				headerName: 'Minutes Of Meeting Upload',
 				cellRenderer: function(params) {
-					setSelected(params);
-					return <Button onClick={openMomUpload}>Upload</Button>;
+					return (
+						<Button
+							onClick={(e) => {
+								setSelected(params.data);
+								openMomUpload();
+							}}
+						>
+							Upload
+						</Button>
+					);
 				}
 			}
 		]
@@ -250,7 +261,6 @@ function Assignments(Props) {
 															<Link to="/assignmentsubmission">
 																<button
 																	className="btn btn-primary"
-																	m
 																	onClick={() => {
 																		setUploadSelector(item);
 																	}}
@@ -302,9 +312,7 @@ function Assignments(Props) {
 														<td>{DateConverter(item.ApprovedDate, 'Date')}</td>
 														<td>
 															<a href={item.Link} target="_blank">
-																<button className="btn btn-primary" m>
-																	VIEW
-																</button>
+																<button className="btn btn-primary">VIEW</button>
 															</a>
 														</td>
 													</tr>

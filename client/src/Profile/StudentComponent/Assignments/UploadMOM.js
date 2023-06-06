@@ -7,15 +7,22 @@ import Cookies from 'universal-cookie';
 
 const UploadMOM = (props) => {
 	const cookies = new Cookies();
-	const [ url, setUrl ] = useState(props.assignment.data.MinutesOfMeeting);
+	const [ url, setUrl ] = useState(props.assignment.MinutesOfMeeting);
 	const BASEURL = process.env.REACT_APP_SAMPLE;
+	useEffect(() => {
+		const print = () => {
+			console.log(props.assignment);
+		};
+		print();
+	}, []);
 
 	const addMoM = async (e) => {
 		e.preventDefault();
+
 		const response = await axios.post(
-			`${BASEURL}/UploadMom`,
+			`http://localhost:5000/api/v1/UploadMom`,
 			{
-				id: props.assignment.data._id,
+				id: props.assignment._id,
 				url: url
 			},
 			{

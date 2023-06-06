@@ -81,6 +81,7 @@ const MeetingsList = (props) => {
 				}}
 			>
 				{props.list.data.approvedMeetings.map((element) => {
+					console.log(element);
 					return (
 						<Card key={element._id} style={{ width: '18rem' }}>
 							<Card.Body>
