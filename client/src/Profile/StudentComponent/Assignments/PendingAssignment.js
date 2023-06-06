@@ -223,7 +223,7 @@ function Assignments(Props) {
 							message={snackbarMsg}
 							anchorOrigin={{
 								vertical: 'Bottom',
-								horizontal: 'Left'
+								horizontal: 'left'
 							}}
 						/>
 						<div className="container">

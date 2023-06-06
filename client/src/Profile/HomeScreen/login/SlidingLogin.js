@@ -346,7 +346,7 @@ function FieldsLogin(props) {
                     }!&body= Hello Team Keystone, This email is password reset email. Kindly revert the the login credentials to following candidate. Registered Name: ${fullName}, Registered Email Address : ${emailIdLogin}. Thank You and Regards.`}
                     target="_blank"
                   >
-                    <button onclick={OnClickFpass}>Reset</button>
+                    <button onClick={OnClickFpass}>Reset</button>
                   </a>
                   {setInitialvalues(props.values)}
                 </Form>

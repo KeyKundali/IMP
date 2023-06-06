@@ -1,5 +1,6 @@
 import './AdminProfile.css';
 import { Fragment } from 'react';
+import vibhangimaam from '../../assets/MentorProfileImages/vibhangimaam.jpg';
 const AdminProfile = () => {
 	return (
 		<Fragment>
@@ -8,12 +9,11 @@ const AdminProfile = () => {
 					<div className="row align-items-center flex-row-reverse">
 						<div className="col-lg-6">
 							<div className="about-text go-to">
-								<h3 className="dark-color">Admin Account</h3>
+								<h3 className="dark-color">Vibhangi Bower</h3>
 
-								<p>
-									This Account belongs to the Admin of Industrial Mentorship Program Of Keystone
-									School Of Engineering
-								</p>
+								<p>-Project Lead </p>
+								<p> Industrial mentorship Program</p>
+								<p> Keystone School Of Engineering</p>
 								<div className="row about-list">
 									<div className="col-md-6" />
 									<div className="col-md-6" />
@@ -22,7 +22,7 @@ const AdminProfile = () => {
 						</div>
 						<div className="col-lg-6">
 							<div className="about-avatar">
-								<img src="https://bootdey.com/img/Content/avatar/avatar3.png" title="" alt="" />
+								<img src={vibhangimaam} title="" alt="" />
 							</div>
 						</div>
 					</div>
