@@ -20,7 +20,7 @@ const UploadMOM = (props) => {
 		e.preventDefault();
 
 		const response = await axios.post(
-			`http://localhost:5000/api/v1/UploadMom`,
+			`${BASEURL}/UploadMom`,
 			{
 				id: props.assignment._id,
 				url: url
