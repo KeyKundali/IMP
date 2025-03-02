@@ -3,7 +3,7 @@ const { MONGOOSE_CONNECTION } = process.env;
 const bcrypt=require("bcryptjs");
 mongoose.set("strictQuery", false);
 mongoose.connect(
-  "mongodb+srv://varunsingh:test@cluster0.6zuyiir.mongodb.net/?retryWrites=true&w=majority",
+  "mongodb+srv://varunsingh:test@cluster0.6zuyiir.mongodb.net/imp_2025?retryWrites=true&w=majority",
   {
     useNewUrlParser: true,
   }
