@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import background from './2.jpg';
+import background from './2.png';
 import { Link } from 'react-router-dom';
 import ProfilePage from './ProfilePage/ProfilePage';
 const DefaultImage = process.env.REACT_APP_DEFAULT_IMAGE;
