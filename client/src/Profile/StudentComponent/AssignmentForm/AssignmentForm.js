@@ -97,7 +97,7 @@ function AssignmentForm(Props) {
                     type="text"
                     className="form-control"
                     id="Group Name:"
-                    placeholder={`Topic Name : ${uploadSelector.Group_Name}`}
+                    placeholder={`Group Name : ${uploadSelector.Group_Name}`}
                     disabled
                   />
                 </div>
