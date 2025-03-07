@@ -1,6 +1,6 @@
 import './AdminProfile.css';
 import { Fragment } from 'react';
-import nitin from '../../assets/MentorProfileImages/Nitin.jpg';
+import nitin from '../../assets/Mentors_Profile/Nitin.jpg';
 const AdminProfile = () => {
 	return (
 		<Fragment>

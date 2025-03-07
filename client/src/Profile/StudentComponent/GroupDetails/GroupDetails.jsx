@@ -2,19 +2,33 @@ import React, { useEffect, useState } from "react";
 import "./GroupDetails.css";
 import defaultMentor from "../../../assets/defaultmentorlogo.png";
 // Mentor Profiles
-import AjayKavade from "../../../assets/MentorProfileImages/AjayKavade.jpg";
-import AmodPanchhapurkar from "../../../assets/MentorProfileImages/AmodPanchhapurkar.jpg";
-import AshfakShaikh from "../../../assets/MentorProfileImages/AshfakShaikh.jpg";
-import HrishikeshDhande from "../../../assets/MentorProfileImages/HrishikeshDhande.jpg";
-import JitendraSardesai from "../../../assets/MentorProfileImages/JitendraSardesai.jpg";
-import KaustubhKulkarni from "../../../assets/MentorProfileImages/KaustubhKulkarni.jpg";
-import KishoreKunjeer from "../../../assets/MentorProfileImages/KishoreKunjeer.jpg";
-import KrishnatMolawade from "../../../assets/MentorProfileImages/KrishnatMolawade.jpg";
-import NileshHonrao from "../../../assets/MentorProfileImages/NileshHonrao.jpg";
-import NileshVartak from "../../../assets/MentorProfileImages/NileshVartak.jpg";
-import PrashantDahibhate from "../../../assets/MentorProfileImages/PrashantDahibhate.jpg";
-import RahulLale from "../../../assets/MentorProfileImages/RahulLale.jpg";
-import SudhirPatil from "../../../assets/MentorProfileImages/SudhirPatil.jpg";
+import Ajay_Kavade from "../../../assets/Mentors_Profile/Ajay_Kavade.jpg"
+import Amit_Ravankar from "../../../assets//Mentors_Profile/Amit_Ravankar.jpg"
+import Amod_Panchhapurkar from "../../../assets//Mentors_Profile/Amod_Panchhapurkar.jpg"
+import Amol_Nitave from "../../../assets//Mentors_Profile/Amol_Nitave.jpg"
+import Anil_Shukla from "../../../assets//Mentors_Profile/Anil_Shukla.jpg"
+import Archana_Joshi from "../../../assets//Mentors_Profile/Archana_Joshi.jpg"
+import Ashfak_Shaikh from "../../../assets//Mentors_Profile/Ashfak_Shaikh.jpg"
+import Dinesh_sant from "../../../assets//Mentors_Profile/Dinesh_sant.jpg"
+import Jitendra_Sardesai from "../../../assets//Mentors_Profile/Jitendra_Sardesai.jpg"
+import Kailash_Maisekar from "../../../assets//Mentors_Profile/Kailash_Maisekar.jpg"
+import Kaustubh_Kulkarni from "../../../assets//Mentors_Profile/Kaustubh_Kulkarni.jpg"
+import Krishnat_Molawade from "../../../assets//Mentors_Profile/Krishnat_Molawade.jpg"
+import Makarand_Damle from "../../../assets//Mentors_Profile/Makarand_Damle.jpg"
+import Milind_Boraste from "../../../assets//Mentors_Profile/Milind_Boraste.jpg"
+import Milind_Inamdar from "../../../assets//Mentors_Profile/Milind_Inamdar.jpg"
+import Milind_Mutalik from "../../../assets//Mentors_Profile/Milind_Mutalik.jpg"
+import Prashant_Dahibhate from "../../../assets//Mentors_Profile/Prashant_Dahibhate.jpg"
+import Prashant_Deshpande from "../../../assets//Mentors_Profile/Prashant_Deshpande.jpg"
+import Rahul_Lale from "../../../assets//Mentors_Profile/Rahul_Lale.jpg"
+import Sachin_Apte from "../../../assets//Mentors_Profile/Sachin_Apte.jpg"
+import Sandeep_gaikwad from "../../../assets//Mentors_Profile/Sandeep_gaikwad.jpg"
+import shridhar_nale from "../../../assets//Mentors_Profile/shridhar_nale.jpg"
+import Shrikant_Sarda from "../../../assets//Mentors_Profile/Shrikant_Sarda.jpg"
+import Sudhir_Patil from "../../../assets//Mentors_Profile/Sudhir_Patil.jpg"
+import Taral_Shah from "../../../assets//Mentors_Profile/Taral_Shah.jpg"
+import Vaibhav_Salunkhe from "../../../assets//Mentors_Profile/Vaibhav_Salunkhe.jpg"
+import Vishwesh_Shete  from "../../../assets//Mentors_Profile/Vishwesh_Shete.jpg"
 
 import axios from "axios";
 import Cookies from "universal-cookie";
@@ -130,40 +144,64 @@ export default function BasicTable({ studentData }, Props) {
       setEmailId(ListData?.data.MentorData[0]?.Mentor_EmailId);
       setLoading(false);
     }
-
-    if (GroupDataMentor[0]?.Mentor_Name === "Ajay Arun Kavade") {
-      setCustomeMentorPic(AjayKavade);
-    } else if (
-      GroupDataMentor[0]?.Mentor_Name === "Amod Pradeep Panchhapurkar"
-    ) {
-      setCustomeMentorPic(AmodPanchhapurkar);
-    } else if (GroupDataMentor[0]?.Mentor_Name === "Ashfak Shaikh") {
-      setCustomeMentorPic(AshfakShaikh);
-    } else if (GroupDataMentor[0]?.Mentor_Name === "Hrishikesh Jayant Dhande") {
-      setCustomeMentorPic(HrishikeshDhande);
-    } else if (
-      GroupDataMentor[0]?.Mentor_Name === "Krishnat Narayan Molawade"
-    ) {
-      setCustomeMentorPic(KrishnatMolawade);
-    } else if (GroupDataMentor[0]?.Mentor_Name === "Kishore Kunjeer") {
-      setCustomeMentorPic(KishoreKunjeer);
-    } else if (GroupDataMentor[0]?.Mentor_Name === "Sudhir Patil") {
-      setCustomeMentorPic(SudhirPatil);
-    } else if (GroupDataMentor[0]?.Mentor_Name === "Kaustubh Kulkarni") {
-      setCustomeMentorPic(KaustubhKulkarni);
-    } else if (GroupDataMentor[0]?.Mentor_Name === "Jitendra Sardesai") {
-      setCustomeMentorPic(JitendraSardesai);
-    } else if (GroupDataMentor[0]?.Mentor_Name === "Prashant V Dahibhate") {
-      setCustomeMentorPic(PrashantDahibhate);
-    } else if (GroupDataMentor[0]?.Mentor_Name === "Nilesh Vartak") {
-      setCustomeMentorPic(NileshVartak);
-    } else if (GroupDataMentor[0]?.Mentor_Name === "Rahul D Lale") {
-      setCustomeMentorPic(RahulLale);
-    } else if (GroupDataMentor[0]?.Mentor_Name === "Nilesh Guruling Honrao") {
-      setCustomeMentorPic(NileshHonrao);
-    } else {
-      setCustomeMentorPic(defaultMentor);
-    }
+     if (GroupDataMentor[0]?.Mentor_Name ==="Archana Joshi"){
+          setCustomeMentorPic(Archana_Joshi);
+        }else   if (GroupDataMentor[0]?.Mentor_Name ==="Milind Mutalik"){
+          setCustomeMentorPic(Milind_Mutalik);
+        }else   if (GroupDataMentor[0]?.Mentor_Name ==="Ashfak Shaikh"){
+          setCustomeMentorPic(Ashfak_Shaikh)
+        } else   if (GroupDataMentor[0]?.Mentor_Name ==="Sachin Apte"){
+          setCustomeMentorPic(Sachin_Apte)
+        } else   if (GroupDataMentor[0]?.Mentor_Name ==="Jitendra Sardesai"){
+          setCustomeMentorPic(Jitendra_Sardesai);
+        }else   if (GroupDataMentor[0]?.Mentor_Name ==="Sudhir Patil"){
+          setCustomeMentorPic(Sudhir_Patil);
+        }else   if (GroupDataMentor[0]?.Mentor_Name ==="Taral Shah"){
+          setCustomeMentorPic(Taral_Shah);
+        }else   if (GroupDataMentor[0]?.Mentor_Name ==="Amit Ravankar"){
+          setCustomeMentorPic(Amit_Ravankar);
+        }else   if (GroupDataMentor[0]?.Mentor_Name ==="Amod Panchhapurkar"){
+          setCustomeMentorPic(Amod_Panchhapurkar);
+        }else   if (GroupDataMentor[0]?.Mentor_Name ==="Amol Nitave"){
+          setCustomeMentorPic(Amol_Nitave);
+        }else   if (GroupDataMentor[0]?.Mentor_Name ==="Kailash Maisekar"){
+          setCustomeMentorPic(Kailash_Maisekar);
+        }else   if (GroupDataMentor[0]?.Mentor_Name ==="Kaustubh Kulkarni"){
+          setCustomeMentorPic(Kaustubh_Kulkarni);
+        }else   if (GroupDataMentor[0]?.Mentor_Name ==="Dinesh Sant"){
+          setCustomeMentorPic(Dinesh_sant);
+        }else   if (GroupDataMentor[0]?.Mentor_Name ==="Krishnat Molawade"){
+          setCustomeMentorPic(Krishnat_Molawade);
+        }else if (GroupDataMentor[0]?.Mentor_Name ==="Prashant Deshpande"){
+          setCustomeMentorPic(Prashant_Deshpande);
+        }else if (GroupDataMentor[0]?.Mentor_Name ==="Vaibhav Salunkhe"){
+          setCustomeMentorPic(Vaibhav_Salunkhe);
+        }else if (GroupDataMentor[0]?.Mentor_Name ==="Milind Inamdar"){
+          setCustomeMentorPic(Milind_Inamdar);
+        }else if (GroupDataMentor[0]?.Mentor_Name ==="Rahul Lale"){
+          setCustomeMentorPic(Rahul_Lale);
+        }else if (GroupDataMentor[0]?.Mentor_Name ==="Shrikant Sarda"){
+          setCustomeMentorPic(Shrikant_Sarda);
+        }else if (GroupDataMentor[0]?.Mentor_Name ==="Vishwesh Shete"){ 
+          setCustomeMentorPic(Vishwesh_Shete);
+        }else if (GroupDataMentor[0]?.Mentor_Name ==="Sandeep Gaikwad"){
+          setCustomeMentorPic(Sandeep_gaikwad);
+        }else if (GroupDataMentor[0]?.Mentor_Name ==="Ajay Kavade"){
+          setCustomeMentorPic(Ajay_Kavade);
+        }else if (GroupDataMentor[0]?.Mentor_Name ==="Anil Shukla"){
+          setCustomeMentorPic(Anil_Shukla);
+        }else if (GroupDataMentor[0]?.Mentor_Name ==="Prashant Dahibhate"){
+          setCustomeMentorPic(Prashant_Dahibhate);
+          }else if (GroupDataMentor[0]?.Mentor_Name ==="Shridhar Nale"){
+          setCustomeMentorPic(shridhar_nale);
+        }else if (GroupDataMentor[0]?.Mentor_Name ==="Milind Boraste"){
+          setCustomeMentorPic(Milind_Boraste);
+        }else if (GroupDataMentor[0]?.Mentor_Name ==="Makarand Damle"){
+          setCustomeMentorPic(Makarand_Damle);
+        }else{
+          setCustomeMentorPic(defaultMentor);
+        }
+    
   };
 
   useEffect(() => {
