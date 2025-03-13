@@ -4,16 +4,37 @@ import Cookies from 'universal-cookie';
 import axios from 'axios';
 import { Modal } from 'react-bootstrap';
 import MeetingsList from './MeetingsList';
+
 const Meeting = () => {
 	const BASEURL = process.env.REACT_APP_SAMPLE;
 	const cookies = new Cookies();
 	const [ listOfMeetings, setListOfMeetings ] = useState('');
 	const [ showListOfMeetings, setShowListOfMeetings ] = useState(false);
 	const [ mentorsList, setMentorsList ] = useState({ data: [] });
+
+	// Admin mapping object
+	const ADMIN_MAPPING = {
+		"dean.tnp@keystonesoe.in": 7, 
+		"pallavi.soman@keystonesoe.in": 1,
+		"jayshree.pawar@keystonesoe.in": 2,
+		"mandarsoman28@gmail.com": 3,
+		"nitin.deshpande@keystonesoe.in ": 4,
+		"prashant.babar@keystonesoe.in ": 5,
+		"sahya.pandey@keystonesoe.in": 6,
+		"vinitinamkekse@gmail.com": 0,// Super admin can see all mentors
+
+	};
+
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
 				const url = `${BASEURL}/ViewMentorList`;
+
+				// Get admin email from JWT token
+				const token = cookies.get('KeyToken');
+				const tokenPayload = JSON.parse(atob(token.split('.')[1]));
+				const currentAdminEmail = tokenPayload.New_User_Details.emailId;
+				const currentAdminId = ADMIN_MAPPING[currentAdminEmail];
 
 				const response = await axios.post(
 					url,
@@ -24,14 +45,20 @@ const Meeting = () => {
 						}
 					}
 				);
-				console.log(response.data.data);
-				setMentorsList({ data: response.data.data });
+
+				// If admin ID is 0, show all mentors, otherwise filter by Associated_Admins
+				const filteredMentors = currentAdminId === 0 
+					? response.data.data 
+					: response.data.data.filter(mentor => mentor.Associated_Admins === currentAdminId);
+				
+				setMentorsList({ data: filteredMentors });
 			} catch (error) {
 				console.log(error);
 			}
 		};
 		fetchData();
 	}, []);
+
 	const fetchMeetingDetails = async (data) => {
 		try {
 			const url = `${BASEURL}/GetMeetingDetailsOnMentorName/` + data.Mentor_Group_Name;
@@ -50,9 +77,11 @@ const Meeting = () => {
 			console.log(error);
 		}
 	};
+
 	const handleShowMeetingsClose = () => {
 		setShowListOfMeetings(false);
 	};
+
 	return (
 		<div
 			className="p-4"

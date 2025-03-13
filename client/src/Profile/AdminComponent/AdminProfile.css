@@ -121,3 +121,57 @@ mark {
 .dark-color {
     color: #20247b;
 }
+
+.admin-profile-card {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.profile-item {
+    margin-bottom: 25px;
+}
+
+.profile-item h4 {
+    color: #333;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.profile-item p {
+    color: #666;
+    font-size: 1.05rem;
+    margin: 0;
+}
+
+.groups-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.group-badge {
+    background: #007bff;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.about-text {
+    padding: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .admin-profile-card {
+        padding: 20px;
+    }
+
+    .profile-item {
+        margin-bottom: 20px;
+    }
+}

@@ -36,7 +36,12 @@ const Mentor_Profile_Schema = new mongoose.Schema({
 	},
 	Mentor_review_url: {
 		type: String
-	}
+	},
+    Associated_Admins: {
+        type: Number, 
+        required: true
+    }
+	
 });
 
 const Mentor_Profile_Model = new mongoose.model('Mentor_Model_db', Mentor_Profile_Schema);

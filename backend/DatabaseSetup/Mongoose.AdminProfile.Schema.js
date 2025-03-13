@@ -9,6 +9,9 @@ const Admin_Profile_Schema= new mongoose.Schema({
     },
     Admin_EmailId:{
         type: String,
+    },
+    Admin_Groups:{
+        type: [String],
     }
 });
 
