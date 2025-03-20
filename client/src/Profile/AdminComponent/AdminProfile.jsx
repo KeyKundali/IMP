@@ -15,8 +15,8 @@ const AdminProfile = () => {
     "pallavi.soman@keystonesoe.in": 1,
     "jayshree.pawar@keystonesoe.in": 2,
     "mandarsoman28@gmail.com": 3,
-    "nitin.deshpande@keystonesoe.in ": 4,
-    "prashant.babar@keystonesoe.in ": 5,
+    "nitin.deshpande@keystonesoe.in": 4,
+    "prashant.babar@keystonesoe.in": 5,
     "sahya.pandey@keystonesoe.in": 6,
     "dean.tnp@keystonesoe.in": 7, // Super admin can see all mentors
   };
