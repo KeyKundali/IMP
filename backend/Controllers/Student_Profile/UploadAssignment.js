@@ -38,19 +38,26 @@ const UploadAssignment = (req, res) => {
 			if (!fs.existsSync(pathsToBeMade)) {
 				fs.mkdirSync(pathsToBeMade);
 			}
-			// if (!fs.existsSync())
-			const rawData = fs.readFileSync(files.file.filepath);
-			// 	fs.writeFileSync(newPath, rawData, function(err) {
-			if (err) {
+			// Use streaming to avoid loading entire file into memory
+			const readStream = fs.createReadStream(files.file.filepath);
+			const writeStream = fs.createWriteStream(newPath);
+
+			readStream.pipe(writeStream);
+
+			writeStream.on('finish', function() {
+				// Clean up temp file
+				fs.unlink(files.file.filepath, (err) => {
+					if (err) console.log('Temp file cleanup error:', err);
+				});
+				return res.send('Successfully uploaded');
+			});
+
+			writeStream.on('error', function(err) {
 				console.log(err);
-				res.status(500).send({
+				return res.status(500).send({
 					success: false,
 					error: err
 				});
-			}
-			fs.writeFile(newPath, rawData, function(err) {
-				if (err) console.log(err);
-				return res.send('Successfully uploaded');
 			});
 		});
 	} catch (Error) {
