@@ -47,6 +47,7 @@ function Assignments(Props) {
 	const [ snackbarMsg, setSnackbarMsg ] = useState();
 	const [ snackbarClassName, setSnackbarClassName ] = useState();
 	const [ momOpen, setOpenMom ] = useState(false);
+	const [ isSubmittingAssignment, setIsSubmittingAssignment ] = useState(false);
 	const handleClose = () => {
 		setOpen(false);
 	};
@@ -145,30 +146,65 @@ function Assignments(Props) {
 	};
 
 	const handleUploadStudent = async (event) => {
-		// event.preventDefault();
-		const UserData = await axios.post(
-			`${BASEURL}/UploadAssignmentByCords`,
-			{
-				Res_Topic_Name: topicName,
-				Res_Desc: Desc,
-				Res_Mentor_Name: studentData.data.data.Student_Mentor_Name,
-				Res_Coordinator_Name: studentData.data.data.Student_Name,
-				Res_Coordinator: studentData.data.data.Coordinator,
-				Res_Group_Name: studentData.data.data.Student_Group,
-				Res_Upload_Date: date
-			},
-			{
-				headers: {
-					Authorization: cookies.get('KeyToken')
-				}
-			}
-		);
-		if (UserData) {
-			// event.preventDefault();
-			// console.log("8888888", UserData);
+		if (event) {
+			event.preventDefault();
+		}
+
+		// Prevent multiple submissions
+		if (isSubmittingAssignment) {
+			return;
+		}
+
+		// Validate inputs
+		if (!topicName || topicName.trim() === "") {
 			setOpen(true);
-			setSnackbarMsg('Submission Request Created');
-			setSnackbarClassName('valid');
+			setSnackbarMsg('Please enter a topic name');
+			setSnackbarClassName('error');
+			return;
+		}
+
+		if (!Desc || Desc.trim() === "") {
+			setOpen(true);
+			setSnackbarMsg('Please enter a description');
+			setSnackbarClassName('error');
+			return;
+		}
+
+		setIsSubmittingAssignment(true);
+
+		try {
+			const UserData = await axios.post(
+				`${BASEURL}/UploadAssignmentByCords`,
+				{
+					Res_Topic_Name: topicName,
+					Res_Desc: Desc,
+					Res_Mentor_Name: studentData.data.data.Student_Mentor_Name,
+					Res_Coordinator_Name: studentData.data.data.Student_Name,
+					Res_Coordinator: studentData.data.data.Coordinator,
+					Res_Group_Name: studentData.data.data.Student_Group,
+					Res_Upload_Date: date
+				},
+				{
+					headers: {
+						Authorization: cookies.get('KeyToken')
+					}
+				}
+			);
+			if (UserData) {
+				// console.log("8888888", UserData);
+				setOpen(true);
+				setSnackbarMsg('Submission Request Created');
+				setSnackbarClassName('valid');
+				setTopicName('');
+				setDesc('');
+			}
+		} catch (error) {
+			console.error('Error creating submission:', error);
+			setOpen(true);
+			setSnackbarMsg(error.response?.data?.message || 'Failed to create submission');
+			setSnackbarClassName('error');
+		} finally {
+			setIsSubmittingAssignment(false);
 		}
 	};
 	//
@@ -403,12 +439,16 @@ function Assignments(Props) {
 												</div>
 												<button
 													className="button-add-material w-100 mt-5 mb-3"
-													type="Submit"
-													onClick={() => {
-														handleUploadStudent();
+													type="button"
+													onClick={handleUploadStudent}
+													disabled={isSubmittingAssignment}
+													style={{
+														opacity: isSubmittingAssignment ? 0.6 : 1,
+														cursor: isSubmittingAssignment ? "not-allowed" : "pointer"
 													}}
 												>
-													<i className="fa-solid fa-right-to-bracket" />Assign New Submission
+													<i className="fa-solid fa-right-to-bracket" />
+													{isSubmittingAssignment ? "Submitting..." : "Assign New Submission"}
 												</button>
 											</form>
 										</div>
