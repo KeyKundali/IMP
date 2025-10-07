@@ -11,6 +11,7 @@ function AssignmentForm(Props) {
   //
   const { studentData, uploadSelector } = Props;
   const [dLink, setDLink] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
   //
   const BASEURL = process.env.REACT_APP_SAMPLE;
   const cookies = new Cookies();
@@ -27,7 +28,7 @@ function AssignmentForm(Props) {
   const [snackbarMsg, setSnackbarMsg] = useState();
   const [snackbarClassName, setSnackbarClassName] = useState();
   const handleClose = () => {
-   
+
     setOpen(false);
   };
    
@@ -39,28 +40,52 @@ function AssignmentForm(Props) {
   );
 
   const handleUpload = async () => {
-    const UserData = await axios.post(
-      `${BASEURL}/UploadAssignmentByStudent`,
-      {
-        Res_Topic_Name: uploadSelector.Topic_Name,
-        Res_Link: dLink,
-        Res_Mentor_Name: uploadSelector.Mentor_Name,
-        Res_Student_Name: studentData.data.data.Student_Name,
-        Res_Group_Name: uploadSelector.Group_Name,
-        Res_Upload_Date: date,
-      },
-      {
-        headers: {
-          Authorization: cookies.get("KeyToken"),
-        },
-      }
-    );
-    if (UserData) {
-      // console.log("7777", UserData);
+    // Prevent multiple submissions
+    if (isSubmitting) {
+      return;
+    }
+
+    // Validate drive link
+    if (!dLink || dLink.trim() === "") {
       setOpen(true);
-      setSnackbarMsg("Assignment Submited Successfully")
-      setSnackbarClassName("valid")
-      setDLink("");
+      setSnackbarMsg("Please enter a drive link");
+      setSnackbarClassName("error");
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      const UserData = await axios.post(
+        `${BASEURL}/UploadAssignmentByStudent`,
+        {
+          Res_Topic_Name: uploadSelector.Topic_Name,
+          Res_Link: dLink,
+          Res_Mentor_Name: uploadSelector.Mentor_Name,
+          Res_Student_Name: studentData.data.data.Student_Name,
+          Res_Group_Name: uploadSelector.Group_Name,
+          Res_Upload_Date: date,
+        },
+        {
+          headers: {
+            Authorization: cookies.get("KeyToken"),
+          },
+        }
+      );
+      if (UserData) {
+        // console.log("7777", UserData);
+        setOpen(true);
+        setSnackbarMsg("Assignment Submitted Successfully");
+        setSnackbarClassName("valid");
+        setDLink("");
+      }
+    } catch (error) {
+      console.error("Error submitting assignment:", error);
+      setOpen(true);
+      setSnackbarMsg(error.response?.data?.message || "Failed to submit assignment");
+      setSnackbarClassName("error");
+    } finally {
+      setIsSubmitting(false);
     }
   };
   return (
@@ -151,11 +176,15 @@ function AssignmentForm(Props) {
                 <button
                   className="button-add-material w-100 mt-5 mb-3"
                   type="button"
-                  onClick={() => {
-                    handleUpload();
+                  onClick={handleUpload}
+                  disabled={isSubmitting}
+                  style={{
+                    opacity: isSubmitting ? 0.6 : 1,
+                    cursor: isSubmitting ? "not-allowed" : "pointer"
                   }}
                 >
-                  <i className="fa-solid fa-right-to-bracket"></i>Submit
+                  <i className="fa-solid fa-right-to-bracket"></i>
+                  {isSubmitting ? "Submitting..." : "Submit"}
                 </button>
               </form>
               <Snackbar
